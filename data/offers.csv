@@ -1,0 +1,194 @@
+company,category,name,calls,data,social,official,price,validity
+mobily,cd,Mobily 30,100,1,1,35,35,
+mobily,cd,Mobily 75,500,23,23,86,75,
+mobily,cd,Mobily 110,1500,40,65,127,90,
+mobily,cd,Mobily 150,3000,55,U,173,115,
+mobily,cd,Mobily 180,U,80,U,207,130,
+mobily,cd,Mobily 220,U,100,U,253,150,
+mobily,cd,Mobily 360,U,U,U,395,220,
+mobily,cd,Mobily 360,U,U,U,1185,595,3m
+mobily,cd,150 Data Booster,1000,70,U,173,115,
+mobily,cd,Data Booster 180,1000,90,U,207,130,
+mobily,cd,Data Booster 220,1000,114,U,253,150,
+mobily,cd,Extreme,500,40,U,230,140,
+mobily,cd,Extreme Plus,1000,80,U,276,160,
+mobily,fx,Flex Plus 20,60,3,3,23,25,1w
+mobily,fx,Flex Plus 30,100,1,1,36,45,
+mobily,fx,Flex Plus 65,450,10,15,75,65,
+mobily,fx,Flex Plus 100,1100,35,35,115,85,
+mobily,fx,Flex Plus 150,1700,60,U,173,115,
+mobily,fx,Flex Plus 240,2000,100,U,276,160,56d
+mobily,fx,Flex Plus 320,2000,135,U,368,205,84d
+mobily,dt,,,10,,109,80,1m
+mobily,dt,,,10,,190,120,3m
+mobily,dt,,,20,,156,105,1m
+mobily,dt,,,20,,253,150,3m
+mobily,dt,,,50,,242,145,2m
+mobily,dt,,,50,,299,175,3m
+mobily,dt,,,100,,184,120,1m
+mobily,dt,,,100,,368,205,3m
+mobily,dt,,,300,,517,275,3m
+mobily,dt,,,600,,1035,525,6m
+mobily,dt,,,U,,374,210,1m
+mobily,dt,,,U,,1122,565,3m
+sawa,cd,Sawa Basic,100a,1,1,35,35,
+sawa,cd,Sawa Like,530o,10,15,75,65,
+sawa,cd,Sawa Like Plus,600a,20,20,87,75,
+sawa,cd,Sawa Share,1150a,40,45,124,95,
+sawa,cd,Sawa Share Plus,1540a,40,55,133,95,
+sawa,cd,Sawa 175,1200a,85,U,202,125,
+sawa,cd,Sawa 150,1180a,70,U,173,115,
+sawa,cd,Sawa 120,1250a,45,Us,138,95,
+sawa,cd,Sawa Post,Uo,70,U,184,120,
+sawa,cd,Sawa Post Plus,Uo+550,74,U,196,125,
+sawa,cd,Sawa Star,Uo,113,U,253,150,
+sawa,cd,Sawa Star Plus,1450a,127,U,276,160,
+sawa,cd,Sawa Hero,Ua,U,U,414,230,
+sawa,fx,Sawa Flex 25,65i,1,,25,25,
+sawa,fx,Sawa Flex Basic,100i,1,1,41,40,
+sawa,fx,Sawa Flex 65,450i,10,15,75,65,
+sawa,fx,Sawa Flex 75,600i,10,20,87,115,
+sawa,fx,Sawa Flex 100,1100i,35,36,115,85,
+sawa,fx,Sawa Flex 120,1300i,45,U,138,95,
+sawa,fx,Sawa Flex 150,1500i,60,U,173,115,
+sawa,fx,Sawa Flex 240,2000i,100,U,276,160,
+sawa,fx,Sawa Flex 340,2000i,140,U,391,215,3m
+sawa,dt,,,120,,230,140,1m
+sawa,dt,,,250,,460,250,3m
+sawa,dt,,,350,,633,335,3m
+sawa,dt,,,300,,575,305,4m
+sawa,dt,,,400,,748,390,4m
+sawa,dt,,,600,,1035,525,6m
+sawa,dt,Max,,U,,391,215,1m
+sawa,dt,Max,,U,,1139,575,3m
+sawa,dt,,,70,,138,130,1m
+sawa,dt,Dash Cam,,30,,443,355,12m
+sawa,dt,Dash Cam,,20,,265,225,6m
+salam,cd,Solo 74,450,20,20,86,70,
+salam,cd,Solo 99,1000,35,U,113,85,
+salam,cd,Solo 149,U,59,U,172,115,
+salam,cd,Solo 179,U,79,U,207,130,
+salam,cd,Solo 199,1800,80,U,229,140,
+salam,cd,Infinity + extra SIM,U,U,U,413,230,
+salam,cd,Solo 160,1000,50,U,184,120,2m
+salam,cd,Solo 240,1000,90,U,276,160,3m
+salam,cd,Solo 340,1500,135,U,391,215,6m
+salam,fx,Flex 85,500l,12,12,98,75,
+salam,fx,Flex 110,1000l,35,30,127,90,
+salam,fx,Flex 150,1200l,55,U,173,115,
+salam,fx,Flex 200,1500l,65,U,230,140,
+salam,dt,,,10,,80,90,
+salam,dt,,,50,,132,130,
+salam,dt,,,100,,189,170,
+salam,dt,,,10,10,132,130,2m
+salam,dt,,,30,30,201,180,3m
+salam,dt,,,50,50,224,195,3m
+salam,dt,,,100,100,343,285,3m
+salam,dt,,,150,150,458,370,3m
+salam,dt,,,300,,517,410,3m
+salam,dt,,,U,U,373,305,
+friendi,cd,,120,1,,20,20,14d
+friendi,cd,,250,20,30,81,70,
+friendi,cd,,500,30,40,98,75,
+friendi,cd,,700,40,U,113,85,
+friendi,cd,,1000,45,U,126,90,
+friendi,cd,,U,55,U,171,115,
+friendi,cd,,800,100,,367,300,3m
+friendi,fx,,150l,2,2,48,55,
+friendi,fx,,150l,3,3,23,40,7d
+friendi,fx,,300l,6,6,69,65,
+friendi,fx,,1000l,35,35,115,85,
+friendi,fx,,1200l,40,U,127,90,
+friendi,fx,,1500l,100,U,345,285,3m
+friendi,dt,,,50,,201,125,3m
+friendi,dt,,,75,,293,245,3m
+friendi,dt,,,200,,370,305,3m
+friendi,dt,,,300,,518,415,3m
+friendi,dt,,,U,,374,305,1m
+virgin,cd,,250,3,1,52,55,
+virgin,cd,,350,20,20,81,70,
+virgin,cd,,750,40,U,115,85,
+virgin,cd,,745,45,U,124,90,
+virgin,cd,,U,55,U,173,115,
+virgin,cd,,U,80,U,226,140,
+virgin,cd,,U,U,U,410,335,
+virgin,fx,,300l,6,6,70,65,
+virgin,fx,,1000l,35,35,115,85,
+virgin,fx,,1500l,100,U,345,285,3m
+virgin,dt,,,50,,96,110,1m
+virgin,dt,,,75,75,225,215,2m
+virgin,dt,,,100,,173,175,1m
+virgin,dt,,,100,,247,235,6m
+virgin,dt,,,125,100,337,310,3m
+virgin,dt,,,300,,518,460,3m
+virgin,dt,,,300,,534,470,6m
+virgin,dt,,,600,,1011,865,6m
+virgin,dt,,,U,,365,330,1m
+libara,cd,Libara 60,400a,6,9,69,70,
+libara,cd,Libara 70,350a,15,20,81,80,
+libara,cd,Libara 90,600a,35,55,104,105,
+libara,cd,Libara 100,900l,30,30,115,115,
+libara,cd,Libara 110,1100,40,U,126,125,
+libara,cd,Libara 114,,50,U,132,130,
+redbull,cd,Mazaji 80,500,25,35,92,75,
+redbull,cd,Mazaji 95,800,30,U,109,85,
+redbull,cd,Mazaji 120,1050,50,U,138,95,
+redbull,cd,Mazaji 130,1200,55,U,150,100,
+redbull,cd,Mazaji 160 Plus,U,66,U,184,120,
+redbull,cd,Mazaji 360 Plus,U,U,U,414,230,
+redbull,fx,Flex 200,600l,89,U,230,140,
+redbull,fx,Flex 300,1300l,100,U,345,195,90d
+redbull,fx,Flex 350,1450l,145,U,403,225,120d
+redbull,dt,,,12,12,75,65,1m
+redbull,dt,,,30,30,98,75,1m
+redbull,dt,,,50,50,150,100,1m
+redbull,dt,,,U,,374,210,1m
+redbull,dt,,,80,80,242,145,2m
+redbull,dt,,,200,,345,195,3m
+redbull,dt,,,250,100,552,295,3m
+jawy,cd,Jawy 200,1300,101,U,230,140,
+jawy,cd,Jawy 150,1000,71,U,173,115,
+jawy,cd,Jawy 110,750,45,U,127,90,
+jawy,cd,Jawy 90,500,33,U,104,80,
+jawy,cd,Jawy 70,350,21,20,81,70,
+jawy,cd,Jawy 45,250,3,1,52,55,
+jawy,fx,Flex 400,3000l,150,150,460,250,120d
+jawy,fx,Flex 300,1600l,100,U,345,195,90d
+jawy,fx,Flex 205,1400l,80,U,236,145,60d
+jawy,fx,Flex 155,1500l,63,U,188,125,
+jawy,fx,Flex 125,1100l,47,U,144,100,
+jawy,fx,Flex 105,1010l,40,35,121,90,
+jawy,fx,Flex 75,400l,14,11,87,70,
+jawy,fx,Flex 50,100l,4,0,58,60,
+jawy,dt,Data 400,,260,,460,250,
+jawy,dt,Data 240,,160,,276,160,
+jawy,dt,Data 180,,120,,207,95,
+zain,cd,Shabab 49,100,2,2**,49,40,
+zain,cd,Shabab 79,500,15,15**,79,60,
+zain,cd,Shabab 119,1500,30,U**,119,70,
+zain,cd,Shabab 119,4500,90,U**,357,90,12w
+zain,cd,Shabab 169,U,55,U**,169,105,
+zain,cd,Shabab 409,U,U,U**,409,196,
+zain,fx,Flex 29,100*,1,1**,34,35,
+zain,fx,Flex 69,300*,10,15**,80,70,
+zain,fx,Flex 109,800*,35,U**,126,90,
+zain,fx,Flex Sudan 109,2000,25,U**,126,90,
+zain,fx,Flex 139,1000*,50,U**,160,105,
+zain,fx,Flex 169,1250*,60,U**,195,125,
+zain,fx,Flex 329,1000*,135,U**,379,210,3m
+zain,dt,,,30,30**,202,125,3m
+zain,dt,,,30,50**,114,85,1m
+zain,dt,80 GB,,75,75**,229,140,2m
+zain,dt,,,125,100**,344,195,3m
+zain,dt,,,150,150**,459,250,3m
+zain,dt,,,105,,184,120,1m
+zain,dt,300 Plus,,1TB,,518,280,3m
+zain,dt,,,300,,518,280,3m
+zain,dt,,,U,,1149,580,3m
+zain,dt,,,U,,374,210,1m
+zain,dt,,,U,,2299,1130,6m
+zain,vz,Visitors 40,60*,6,,40,40,2w
+zain,vz,Visitors 60,150*,25,,60,60,2w
+zain,vz,Visitors 85,250**,30,,85,70,3w
+zain,vz,Visitors 120,350**,48,Uc,120,90,4w
+zain,vz,Visitors 160,500**,68,Uc,160,105,4w
