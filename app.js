@@ -62,6 +62,13 @@ am:{cost:"ወጪ",offerp:"የቅናሽ ዋጋ",name_title:"እንኳን ደህ�
 };
 Object.keys(X).forEach(function(l){Object.assign(T[l],X[l]);});
 })();
+
+Object.assign(T.en,{diag:"Test connection",save_err:"Couldn't save"});
+Object.assign(T.ar,{diag:"فحص الاتصال",save_err:"تعذر الحفظ"});
+Object.assign(T.ur,{diag:"کنکشن کی جانچ",save_err:"محفوظ نہیں ہو سکا"});
+Object.assign(T.bn,{diag:"সংযোগ পরীক্ষা",save_err:"সংরক্ষণ করা যায়নি"});
+Object.assign(T.hi,{diag:"कनेक्शन जाँचें",save_err:"सेव नहीं हो सका"});
+Object.assign(T.am,{diag:"ግንኙነት ፈትሽ",save_err:"ማስቀመጥ አልተቻለም"});
 var UPD={ar:"تحديث",en:"Update",ur:"اپ ڈیٹ",bn:"আপডেট",hi:"अपडेट",am:"አዘምን"};
 var CTRY={
 ar:{Algeria:"الجزائر",Australia:"أستراليا",Bahrain:"البحرين",Bangladesh:"بنجلاديش",China:"الصين",Egypt:"مصر",Ethiopia:"إثيوبيا",France:"فرنسا",India:"الهند",Indonesia:"إندونيسيا",Iraq:"العراق",Jordan:"الأردن",Kazakhstan:"كازاخستان",Kuwait:"الكويت",Lebanon:"لبنان",Libya:"ليبيا",Malaysia:"ماليزيا",Nepal:"النيبال",Nigeria:"نيجيريا",Oman:"عمان",Pakistan:"باكستان",Philippines:"الفلبين",Qatar:"قطر","Sri Lanka":"سريلانكا",Sudan:"السودان",Syria:"سوريا",Thailand:"تايلاند",UAE:"الإمارات",USA:"أمريكا",Yemen:"اليمن"},
@@ -363,7 +370,7 @@ function finderList(v,tol,cat,ctry,sort){
     return Math.abs(x.p-v)-Math.abs(y.p-v)||dataNum(y.d)-dataNum(x.d);});
   return l.slice(0,40);
 }
-function exBtn(scope){return `<div class="acts2"><button data-act="ex" data-scope="${scope}">🖨 ${t("print_btn")}</button></div>`;}
+const exB=(scope,cls)=>ADMIN.on?`<button ${cls?`class="${cls}" `:""}data-act="ex" data-scope="${scope}">🖨 ${t("print_btn")}</button>`:"";
 
 /* ---------- home ---------- */
 function homeBody(){
@@ -372,7 +379,7 @@ function homeBody(){
   const l=finderList(v,+VS.htol,VS.hcat,VS.hctry,VS.hsort),F=filtUI("h",["cd","fx","dt","vz"],SORT_F);
   LASTLIST=l.map(o=>o.id);
   if(!l.length)return F+`<div class="empty">${t("nores")}</div>`;
-  return F+`<p class="sub">${l.length} ${t("offers")} ${t("near")} ${v} ${t("cur")}</p>${l.map(o=>offerCard(o,true)).join("")}<div class="acts2"><button class="on" data-act="cmpthese">⚖ ${t("cmp_these")}</button><button data-act="ex" data-scope="list">🖨 ${t("print_btn")}</button></div>`;
+  return F+`<p class="sub">${l.length} ${t("offers")} ${t("near")} ${v} ${t("cur")}</p>${l.map(o=>offerCard(o,true)).join("")}<div class="acts2"><button class="on" data-act="cmpthese">⚖ ${t("cmp_these")}</button>${exB("list")}</div>`;
 }
 function vHome(){
   return `<div class="sec" style="padding:12px 14px"><b>${t("need_price")}</b><div class="tools" style="margin:8px 0 0"><input id="hpv" type="number" inputmode="decimal" placeholder="0" value="${esc(VS.hv)}"><select id="htol">${[["0",t("tol_exact")],["10","± 10"],["20","± 20"],["30","± 30"]].map(x=>`<option value="${x[0]}" ${VS.htol===x[0]?"selected":""}>${x[1]}</option>`).join("")}</select></div></div><div id="hbody">${homeBody()}</div>`;
@@ -389,7 +396,7 @@ function companyBody(){
 function vCompany(id){
   const c=byId(id);if(!c)return vHome();
   VS.cid=id;
-  return `<div class="bar"><button class="back" data-act="home">${RTL[S.lang]?"→":"←"}</button>${tile(c,"sm")}<h2 style="flex:1">${esc(coName(c))}</h2><button class="hb" data-act="ex" data-scope="co:${c.id}" aria-label="print">🖨</button></div><div id="cbody">${companyBody()}</div>`;
+  return `<div class="bar"><button class="back" data-act="home">${RTL[S.lang]?"→":"←"}</button>${tile(c,"sm")}<h2 style="flex:1">${esc(coName(c))}</h2>${ADMIN.on?`<button class="hb" data-act="ex" data-scope="co:${c.id}" aria-label="print">🖨</button>`:""}</div><div id="cbody">${companyBody()}</div>`;
 }
 
 /* ---------- search / favorites ---------- */
@@ -420,7 +427,7 @@ function priceResults(){
   const rows=l.map(o=>{const c=byId(o.cid),g=pg(o);return `<tr><td>${tile(c,"sm")}<b>${esc(coName(c))}</b><br><small>${esc(offerTitle(o))}</small></td>
    <td class="${multi&&callsNum(o.c)===bc?"best":""}">${esc(fmtCalls(o.c))||"–"}</td><td class="${multi&&dataNum(o.d)===bd?"best":""}">${esc(fmtData(o.d))||"–"}</td><td>${esc(fmtSocial(o.s))||"–"}</td><td>${fmtVal(o.v)||"–"}</td>${ADMIN.on||l.some(showOfficial)?`<td>${showOfficial(o)?money(o.o):"–"}</td>`:""}<td><b>${money(o.p)}</b></td>${ADMIN.on?`<td>${o.k==null?"–":money(o.k)}</td>`:""}<td class="${multi&&g&&bg!=null&&Math.abs(g-bg)<1e-9?"best":""}">${g?g.toFixed(2)+" "+t("cur"):"–"}</td></tr>`;}).join("");
   const offCol=ADMIN.on||l.some(showOfficial);
-  return F+`<p class="sub">${l.length} ${t("offers")} ${t("near")} ${v} ${t("cur")}</p><div class="cmpw wm"><table class="cmp"><tr><th>${t("pick_pk")}</th><th>${t("calls")}</th><th>${t("data")}</th><th>${t("social")}</th><th>${t("valid")}</th>${offCol?`<th>${t("official")}</th>`:""}<th>${t("offerp")}</th>${ADMIN.on?`<th>${t("cost")}</th>`:""}<th>${t("pergb")}</th></tr>${rows}</table></div><p class="sub" style="margin-top:8px">${t("cmp_hint")}</p><div class="acts2"><button data-act="ex" data-scope="list">🖨 ${t("print_btn")}</button></div>`;
+  return F+`<p class="sub">${l.length} ${t("offers")} ${t("near")} ${v} ${t("cur")}</p><div class="cmpw wm"><table class="cmp"><tr><th>${t("pick_pk")}</th><th>${t("calls")}</th><th>${t("data")}</th><th>${t("social")}</th><th>${t("valid")}</th>${offCol?`<th>${t("official")}</th>`:""}<th>${t("offerp")}</th>${ADMIN.on?`<th>${t("cost")}</th>`:""}<th>${t("pergb")}</th></tr>${rows}</table></div><p class="sub" style="margin-top:8px">${t("cmp_hint")}</p>${ADMIN.on?`<div class="acts2">${exB("list")}</div>`:""}`;
 }
 function vPrice(){
   return `<div class="tools"><input id="pv" type="number" inputmode="decimal" placeholder="${t("price_ph")}" value="${esc(VS.pv)}"><select id="ptol">${[["0",t("tol_exact")],["10","± 10"],["20","± 20"],["30","± 30"]].map(x=>`<option value="${x[0]}" ${VS.tol===x[0]?"selected":""}>${x[1]}</option>`).join("")}</select></div><div id="pres">${priceResults()}</div>`;
@@ -458,18 +465,18 @@ function vSettings(){
   const ea=(k,l)=>`<button class="${S.exAct===k?"on":""}" data-act="exact" data-v="${k}">${l}</button>`;
   const adm=ADMIN.on?`<div class="sec"><h3>🛠 ${t("admin_sec")}</h3>
     <div class="row"><button class="btn" data-act="addpkg">＋ ${t("add_pkg")}</button><button class="btn g" data-act="showlog">📋 ${t("log_title")}</button></div>
-    ${CFG.apiUrl?"":`<div class="row"><button class="btn g" data-act="impcost">${t("import_cost")}</button></div><input type="file" id="costFile" accept=".csv,text/csv" hidden>`}</div>`:"";
+    <div class="row"><span>${t("name_set")}: <b>${esc(S.name||"-")}</b></span><button class="btn g" data-act="chname">${t("change")}</button></div>
+    <div class="row"><button class="btn g" data-act="impcost">${t("import_cost")}</button><button class="btn g" data-act="diag">🔌 ${t("diag")}</button></div>
+    <div class="row"><span>${t("ex_action")}</span><div class="seg">${ea("share",t("ex_share"))}${ea("print",t("ex_print"))}</div></div>
+    <div class="row"><button class="btn g" data-act="ex" data-scope="all">🖨 ${t("print_btn")} (${t("ex_all")})</button></div>
+    <div class="row"><button class="btn g" data-act="export">${t("export")}</button><button class="btn g" data-act="import">${t("import")}</button></div>
+    <div class="row"><button class="btn" data-act="adminExit">${t("admin_off")}</button></div></div>`:"";
   return `<h2>${t("settings")}</h2>
   ${installed()?"":`<div class="sec"><div class="row"><span>📲 ${t("install")}</span><button class="btn" data-act="install">⬇ ${t("install")}</button></div></div>`}
-  <div class="sec"><div class="row"><span>${ADMIN.on?"🛠 "+t("admin_on"):"👤 "+t("admin_off")}</span><button class="btn ${ADMIN.on?"":"g"}" data-act="adminToggle">${ADMIN.on?t("admin_off"):t("admin_on")}</button></div></div>
   ${adm}
-  <div class="sec"><div class="row"><span>${t("name_set")}: <b>${esc(S.name||"-")}</b></span><button class="btn g" data-act="chname">${t("change")}</button></div>
-  <div class="row"><span>${t("theme")}</span><div class="seg">${th("auto",t("th_auto"))}${th("light",t("th_light"))}${th("dark",t("th_dark"))}</div></div>
-  <div class="row"><span>${t("ex_action")}</span><div class="seg">${ea("share",t("ex_share"))}${ea("print",t("ex_print"))}</div></div>
-  <div class="row"><button class="btn g" data-act="ex" data-scope="all">🖨 ${t("print_btn")} (${t("ex_all")})</button></div></div>
+  <div class="sec"><div class="row"><span>${t("theme")}</span><div class="seg">${th("auto",t("th_auto"))}${th("light",t("th_light"))}${th("dark",t("th_dark"))}</div></div></div>
   <div class="sec"><h3>${t("prices")}</h3><div class="row"><span><b dir="ltr">${esc(DATA_INFO.updated||"-")}</b></span><button class="btn g" data-act="refreshp">${t("refreshp")}</button></div></div>
-  <div class="sec"><h3>${t("ver")}</h3><div class="row"><span>${t("ver")} <b dir="ltr">${APP_VERSION}</b></span><button class="btn" data-act="check" id="chkBtn">${t("update")}</button></div></div>
-  <div class="sec"><h3>${t("backup")}</h3><div class="row"><button class="btn g" data-act="export">${t("export")}</button><button class="btn g" data-act="import">${t("import")}</button></div><input type="file" id="impFile" accept="application/json,.json" hidden></div>
+  <div class="sec"><h3>${t("ver")}</h3><div class="row"><span data-act="ver">${t("ver")} <b dir="ltr">${APP_VERSION}</b></span><button class="btn" data-act="check" id="chkBtn">${t("update")}</button></div></div>
   <div class="sec"><h3>${t("pages")}</h3>${["terms","privacy","about","contact"].map(p=>`<button class="lnk" data-act="page" data-v="${p}"><span>${t(p)}</span><span>${RTL[S.lang]?"‹":"›"}</span></button>`).join("")}</div>`;
 }
 function vPage(p){
@@ -507,6 +514,7 @@ function route(){
   $("#view").innerHTML=html;
   $("#nav").innerHTML=[["home","🏠",t("home")],["search","🔍",t("search")],["compare","⚖️",t("cmp")],["settings","⚙️",t("settings")]].map(x=>`<button class="${tab===x[0]?"on":""}" data-act="nav" data-v="${x[0]}"><i>${x[1]}</i>${x[2]}</button>`).join("");
   document.body.className=ADMIN.on?"admin":"";
+  renderAdminBar();
   window.scrollTo(0,0);
 }
 const go=h=>{if(location.hash==="#"+h)route();else location.hash=h;};
@@ -515,6 +523,14 @@ function rerender(p){
   if(p==="h")$("#hbody").innerHTML=homeBody();
   else if(p==="p")$("#pres").innerHTML=priceResults();
   else if(p==="c")$("#cbody").innerHTML=companyBody();
+}
+
+function renderAdminBar(){
+  const el=$("#adminBar");if(!el)return;
+  if(!ADMIN.on){el.innerHTML="";el.style.display="none";return;}
+  const noCost=ALL.length&&ALL.every(function(o){return o.k===null;});
+  el.style.display="flex";
+  el.innerHTML=`<span>🛠 ${t("admin_on")}</span>${noCost?`<button data-act="impcost">⚠ ${t("cost")}: ${t("import_cost")}</button>`:""}<button data-act="adminExit">${t("admin_off")} ✕</button>`;
 }
 
 /* ---------- modal / toast / theme / lang ---------- */
@@ -535,12 +551,15 @@ function renderLangBar(){$("#langbar").innerHTML=LANGS.map(l=>`<button lang="${l
 function applyLang(){const d=document.documentElement;d.lang=S.lang;d.dir=RTL[S.lang]?"rtl":"ltr";
   setWM();renderLangBar();document.title=t("app");$("#appTitle").textContent=t("app");$("#appSub").textContent=t("tag");}
 
-/* ---------- first launch: name ---------- */
-function askName(change){
-  modal(`<h3>👋 ${t("name_title")}</h3><p>${t("name_msg")}</p><input id="nm" type="text" maxlength="40" placeholder="${t("name_ph")}" value="${esc(change?S.name:"")}" style="direction:${RTL[S.lang]?"rtl":"ltr"}"><div class="acts"><button class="btn" id="nmGo" data-act="nmgo" ${change&&S.name?"":"disabled"}>${t("start")}</button>${change?`<button class="btn g" data-act="close">${t("cancel")}</button>`:""}</div>`,"",!change);
+/* ---------- name (asked at admin login only) ---------- */
+function askName(){
+  modal(`<h3>👋 ${t("name_title")}</h3><p>${t("name_msg")}</p><input id="nm" type="text" maxlength="40" placeholder="${t("name_ph")}" value="${esc(S.name||"")}" style="direction:${RTL[S.lang]?"rtl":"ltr"}"><div class="acts"><button class="btn" id="nmGo" data-act="nmgo" ${S.name?"":"disabled"}>${t("start")}</button><button class="btn g" data-act="nmcancel">${t("cancel")}</button></div>`,"",true);
   const i=$("#nm"),b=$("#nmGo");
   i.addEventListener("input",function(){b.disabled=!i.value.trim();});
   setTimeout(function(){try{i.focus();}catch(e){}},200);
+}
+function enterAdmin(){
+  askPin("admin",function(pin,cb){adminLogin(pin,function(err){cb(err);if(!err)askName();});});
 }
 
 /* ---------- PIN ---------- */
@@ -640,7 +659,7 @@ function submitForm(){
     r.cost=isNaN(r.cost)?"":r.cost;
     apiPost({action:mode,pin:ADMIN.edit,user:S.name,row:r,detail:detail},function(e,j){
       if(e||!j){$("#fErr").textContent=t("pin_net");return;}
-      if(!j.ok){if(j.error==="pin"){ADMIN.edit="";$("#fErr").textContent=t("pin_bad");}else $("#fErr").textContent=t("ex_err");return;}
+      if(!j.ok){if(j.error==="pin"){ADMIN.edit="";$("#fErr").textContent=t("pin_bad");}else $("#fErr").textContent=t("save_err")+": "+String(j.error||"?");return;}
       done();loadData(true);});
   }else{
     const id=mode==="edit"?r.id:"local-"+Date.now();
@@ -671,6 +690,22 @@ function importCosts(file){
     let n=0;rows.slice(1).forEach(function(x){const c=parseFloat(x[ik]);if(x[ii]&&!isNaN(c)){L.costs[x[ii].trim()]=c;n++;}});
     saveL();ALL.forEach(function(o){if(L.costs[o.id]!==undefined)o.k=+L.costs[o.id];});route();toast(n?t("cost_imported"):t("bad"));};
   r.readAsText(file);
+}
+
+/* ---------- connection check (admin) ---------- */
+function diagnose(){
+  const lines=[];const show=function(){modal(`<h3>🔌 ${t("diag")}</h3><div class="logl" dir="ltr" style="font-size:13px;line-height:1.7;white-space:pre-wrap">${esc(lines.join("\n"))}</div><div class="acts"><button class="btn" data-act="close">${t("close")}</button></div>`,"wide");};
+  if(!CFG.apiUrl){lines.push("apiUrl: (empty) - static mode (costs/edits stay on this device)");
+    lines.push("rows loaded: "+ALL.length+" | rows with cost: "+ALL.filter(function(o){return o.k!==null;}).length);show();return;}
+  lines.push("apiUrl: "+CFG.apiUrl);
+  apiGet({action:"version"},function(e,j){
+    lines.push(e||!j?"version: FAIL ("+(e&&e.message)+")":"version: OK "+j.version);
+    apiGet({action:"diag",pin:ADMIN.pin},function(e2,j2){
+      if(e2||!j2)lines.push("diag: FAIL ("+(e2&&e2.message)+") - redeploy the latest Code.gs as a NEW version");
+      else if(!j2.ok)lines.push("diag: "+j2.error);
+      else{lines.push("sheets: "+j2.sheets.join(", "));lines.push("Offers header: "+j2.header.join(","));lines.push("rows: "+j2.rows+" | rows with cost: "+j2.costRows+" | rows without id: "+j2.noId);}
+      lines.push("app rows: "+ALL.length+" | with cost: "+ALL.filter(function(o){return o.k!==null;}).length);
+      show();});});
 }
 
 /* ---------- report model ---------- */
@@ -934,6 +969,7 @@ function applyUpdate(){
 }
 
 /* ---------- events ---------- */
+let VTAPS=0,VT=0;
 document.addEventListener("click",function(e){
   const el=e.target.closest("[data-act]");if(!el)return;const a=el.dataset.act,v=el.dataset.v,p=el.dataset.p;
   if(a==="home")go("home");
@@ -966,9 +1002,10 @@ document.addEventListener("click",function(e){
   else if(a==="check")checkUpdate(true);
   else if(a==="retry")loadData(false);
   else if(a==="refreshp")loadData(true);
-  else if(a==="adminToggle"){
-    if(ADMIN.on){leaveAdmin();route();}
-    else askPin("admin",function(pin,cb){adminLogin(pin,function(err){cb(err);if(!err)route();});});}
+  else if(a==="adminExit"){leaveAdmin();route();}
+  else if(a==="ver"){const n=Date.now();if(n-VT>3000)VTAPS=0;VT=n;VTAPS++;if(VTAPS>=5){VTAPS=0;if(!ADMIN.on)enterAdmin();}}
+  else if(a==="diag")diagnose();
+  else if(a==="nmcancel"){closeModal();leaveAdmin();route();}
   else if(a==="addpkg")needEdit(function(){openForm(null);});
   else if(a==="edit"){const o=getById(el.dataset.k);if(o)needEdit(function(){openForm(o);});}
   else if(a==="fsave")submitForm();
@@ -1006,7 +1043,11 @@ document.addEventListener("input",function(e){
 /* ---------- start ---------- */
 applyTheme();applyLang();
 loadData(false);
-if(!S.name)askName(false);
+let HIDDEN_AT=0;
+document.addEventListener("visibilitychange",function(){
+  if(document.hidden){HIDDEN_AT=Date.now();}
+  else if(ADMIN.on&&HIDDEN_AT&&Date.now()-HIDDEN_AT>5*60*1000){leaveAdmin();route();}
+});
 window.addEventListener("load",function(){
   if("serviceWorker"in navigator&&/^https?:/.test(location.protocol)){navigator.serviceWorker.register("sw.js?v="+APP_VERSION).catch(function(){});}
   setTimeout(function(){checkUpdate(false);},2500);
