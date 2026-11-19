@@ -1,278 +1,278 @@
 {
-"rev":1,
+"rev":2,
 "updated":"2026-11-18",
 "companies":[
  {"id":"mobily","n":{"en":"Mobily","ar":"موبايلي"},"c":"#2563eb","l":"Mo",
   "cats":{
    "cd":[
-    ["mobily-cd-1","Mobily 30","100",1,1,35,35,"","",[]],
-    ["mobily-cd-2","Mobily 75","500",23,23,86,75,"","",[]],
-    ["mobily-cd-3","Mobily 110","1500",40,65,127,90,"","",[]],
-    ["mobily-cd-4","Mobily 150","3000",55,"U",173,115,"","",[]],
-    ["mobily-cd-5","Mobily 180","U",80,"U",207,130,"","",[]],
-    ["mobily-cd-6","Mobily 220","U",100,"U",253,150,"","",[]],
-    ["mobily-cd-7","Mobily 360","U","U","U",395,220,"","",[]],
-    ["mobily-cd-8","Mobily 360","U","U","U",1185,595,"3m","",[]],
-    ["mobily-cd-9","150 Data Booster","1000",70,"U",173,115,"","",[]],
-    ["mobily-cd-10","Data Booster 180","1000",90,"U",207,130,"","",[]],
-    ["mobily-cd-11","Data Booster 220","1000",114,"U",253,150,"","",[]],
-    ["mobily-cd-12","Extreme","500",40,"U",230,140,"","",[]],
-    ["mobily-cd-13","Extreme Plus","1000",80,"U",276,160,"","",[]]
+    ["mobily-cd-1","Mobily 30","100",1,1,35,35,"","",[],17],
+    ["mobily-cd-2","Mobily 75","500",23,23,86,75,"","",[],42],
+    ["mobily-cd-3","Mobily 110","1500",40,65,127,90,"","",[],61],
+    ["mobily-cd-4","Mobily 150","3000",55,"U",173,115,"","",[],83],
+    ["mobily-cd-5","Mobily 180","U",80,"U",207,130,"","",[],99],
+    ["mobily-cd-6","Mobily 220","U",100,"U",253,150,"","",[],121],
+    ["mobily-cd-7","Mobily 360","U","U","U",395,220,"","",[],189],
+    ["mobily-cd-8","Mobily 360","U","U","U",1185,595,"3m","",[],567],
+    ["mobily-cd-9","150 Data Booster","1000",70,"U",173,115,"","",[],83],
+    ["mobily-cd-10","Data Booster 180","1000",90,"U",207,130,"","",[],99],
+    ["mobily-cd-11","Data Booster 220","1000",114,"U",253,150,"","",[],121],
+    ["mobily-cd-12","Extreme","500",40,"U",230,140,"","",[],110],
+    ["mobily-cd-13","Extreme Plus","1000",80,"U",276,160,"","",[],132]
    ],
    "fx":[
-    ["mobily-fx-1","Flex Plus 20","60",3,3,23,25,"1w","",[]],
-    ["mobily-fx-2","Flex Plus 30","100",1,1,36,45,"","",[]],
-    ["mobily-fx-3","Flex Plus 65","450",10,15,75,65,"","",[]],
-    ["mobily-fx-4","Flex Plus 100","1100",35,35,115,85,"","",[]],
-    ["mobily-fx-5","Flex Plus 150","1700",60,"U",173,115,"","",[]],
-    ["mobily-fx-6","Flex Plus 240","2000",100,"U",276,160,"56d","",[]],
-    ["mobily-fx-7","Flex Plus 320","2000",135,"U",368,205,"84d","",[]]
+    ["mobily-fx-1","Flex Plus 20","60",3,3,23,25,"1w","",[],11],
+    ["mobily-fx-2","Flex Plus 30","100",1,1,36,45,"","",[],17],
+    ["mobily-fx-3","Flex Plus 65","450",10,15,75,65,"","",[],36],
+    ["mobily-fx-4","Flex Plus 100","1100",35,35,115,85,"","",[],55],
+    ["mobily-fx-5","Flex Plus 150","1700",60,"U",173,115,"","",[],83],
+    ["mobily-fx-6","Flex Plus 240","2000",100,"U",276,160,"56d","",[],132],
+    ["mobily-fx-7","Flex Plus 320","2000",135,"U",368,205,"84d","",[],176]
    ],
    "dt":[
-    ["mobily-dt-1","","",10,"",109,80,"1m","",[]],
-    ["mobily-dt-2","","",10,"",190,120,"3m","",[]],
-    ["mobily-dt-3","","",20,"",156,105,"1m","",[]],
-    ["mobily-dt-4","","",20,"",253,150,"3m","",[]],
-    ["mobily-dt-5","","",50,"",242,145,"2m","",[]],
-    ["mobily-dt-6","","",50,"",299,175,"3m","",[]],
-    ["mobily-dt-7","","",100,"",184,120,"1m","",[]],
-    ["mobily-dt-8","","",100,"",368,205,"3m","",[]],
-    ["mobily-dt-9","","",300,"",517,275,"3m","",[]],
-    ["mobily-dt-10","","",600,"",1035,525,"6m","",[]],
-    ["mobily-dt-11","","","U","",374,210,"1m","",[]],
-    ["mobily-dt-12","","","U","",1122,565,"3m","",[]]
+    ["mobily-dt-1","","",10,"",109,80,"1m","",[],52],
+    ["mobily-dt-2","","",10,"",190,120,"3m","",[],91],
+    ["mobily-dt-3","","",20,"",156,105,"1m","",[],75],
+    ["mobily-dt-4","","",20,"",253,150,"3m","",[],121],
+    ["mobily-dt-5","","",50,"",242,145,"2m","",[],116],
+    ["mobily-dt-6","","",50,"",299,175,"3m","",[],143],
+    ["mobily-dt-7","","",100,"",184,120,"1m","",[],88],
+    ["mobily-dt-8","","",100,"",368,205,"3m","",[],176],
+    ["mobily-dt-9","","",300,"",517,275,"3m","",[],247],
+    ["mobily-dt-10","","",600,"",1035,525,"6m","",[],495],
+    ["mobily-dt-11","","","U","",374,210,"1m","",[],179],
+    ["mobily-dt-12","","","U","",1122,565,"3m","",[],536]
    ]
   }},
  {"id":"sawa","n":{"en":"Sawa","ar":"سوا"},"c":"#7c3aed","l":"Sa",
   "notes":{"en":"Flex packages are valid for 4 weeks.","ar":"باقات فليكس صالحة لمدة 4 أسابيع."},
   "cats":{
    "cd":[
-    ["sawa-cd-1","Sawa Basic","100a",1,1,35,35,"","",[]],
-    ["sawa-cd-2","Sawa Like","530o",10,15,75,65,"","",[]],
-    ["sawa-cd-3","Sawa Like Plus","600a",20,20,87,75,"","",[]],
-    ["sawa-cd-4","Sawa Share","1150a",40,45,124,95,"","",[]],
-    ["sawa-cd-5","Sawa Share Plus","1540a",40,55,133,95,"","",[]],
-    ["sawa-cd-6","Sawa 175","1200a",85,"U",202,125,"","",[]],
-    ["sawa-cd-7","Sawa 150","1180a",70,"U",173,115,"","",[]],
-    ["sawa-cd-8","Sawa 120","1250a",45,"U",138,95,"","Snapchat;WhatsApp;Facebook",[]],
-    ["sawa-cd-9","Sawa Post","Uo",70,"U",184,120,"","",[]],
-    ["sawa-cd-10","Sawa Post Plus","Uo+550",74,"U",196,125,"","",[]],
-    ["sawa-cd-11","Sawa Star","Uo",113,"U",253,150,"","",[]],
-    ["sawa-cd-12","Sawa Star Plus","1450a",127,"U",276,160,"","",[]],
-    ["sawa-cd-13","Sawa Hero","Ua","U","U",414,230,"","",[]]
+    ["sawa-cd-1","Sawa Basic","100a",1,1,35,35,"","",[],17],
+    ["sawa-cd-2","Sawa Like","530o",10,15,75,65,"","",[],36],
+    ["sawa-cd-3","Sawa Like Plus","600a",20,20,87,75,"","",[],42],
+    ["sawa-cd-4","Sawa Share","1150a",40,45,124,95,"","",[],66],
+    ["sawa-cd-5","Sawa Share Plus","1540a",40,55,133,95,"","",[],64],
+    ["sawa-cd-6","Sawa 175","1200a",85,"U",202,125,"","",[],97],
+    ["sawa-cd-7","Sawa 150","1180a",70,"U",173,115,"","",[],83],
+    ["sawa-cd-8","Sawa 120","1250a",45,"U",138,95,"","Snapchat;WhatsApp;Facebook",[],66],
+    ["sawa-cd-9","Sawa Post","Uo",70,"U",184,120,"","",[],88],
+    ["sawa-cd-10","Sawa Post Plus","Uo+550",74,"U",196,125,"","",[],94],
+    ["sawa-cd-11","Sawa Star","Uo",113,"U",253,150,"","",[],121],
+    ["sawa-cd-12","Sawa Star Plus","1450a",127,"U",276,160,"","",[],132],
+    ["sawa-cd-13","Sawa Hero","Ua","U","U",414,230,"","",[],198]
    ],
    "fx":[
-    ["sawa-fx-1","Sawa Flex 25","65i",1,"",25,25,"","",["Yemen","Sudan","Philippines","Egypt","Bangladesh","India","Pakistan","Ethiopia","Indonesia","UAE","Sri Lanka","Kuwait","Nepal","Oman","Bahrain","Qatar","Syria","Jordan","Lebanon","China"]],
-    ["sawa-fx-2","Sawa Flex Basic","100i",1,1,41,40,"","",["Yemen","Sudan","Philippines","Egypt","Bangladesh","India","Pakistan","Ethiopia","Indonesia","UAE","Sri Lanka","Kuwait","Nepal","Oman","Bahrain","Qatar","Syria","Jordan","Lebanon","China"]],
-    ["sawa-fx-3","Sawa Flex 65","450i",10,15,75,65,"","",["Yemen","Sudan","Philippines","Egypt","Bangladesh","India","Pakistan","Ethiopia","Indonesia","UAE","Sri Lanka","Kuwait","Nepal","Oman","Bahrain","Qatar","Syria","Jordan","Lebanon","China"]],
-    ["sawa-fx-4","Sawa Flex 75","600i",10,20,87,115,"","",["Yemen","Sudan","Philippines","Egypt","Bangladesh","India","Pakistan","Ethiopia","Indonesia","UAE","Sri Lanka","Kuwait","Nepal","Oman","Bahrain","Qatar","Syria","Jordan","Lebanon","China"]],
-    ["sawa-fx-5","Sawa Flex 100","1100i",35,36,115,85,"","",["Yemen","Sudan","Philippines","Egypt","Bangladesh","India","Pakistan","Ethiopia","Indonesia","UAE","Sri Lanka","Kuwait","Nepal","Oman","Bahrain","Qatar","Syria","Jordan","Lebanon","China"]],
-    ["sawa-fx-6","Sawa Flex 120","1300i",45,"U",138,95,"","",["Yemen","Sudan","Philippines","Egypt","Bangladesh","India","Pakistan","Ethiopia","Indonesia","UAE","Sri Lanka","Kuwait","Nepal","Oman","Bahrain","Qatar","Syria","Jordan","Lebanon","China"]],
-    ["sawa-fx-7","Sawa Flex 150","1500i",60,"U",173,115,"","",["Yemen","Sudan","Philippines","Egypt","Bangladesh","India","Pakistan","Ethiopia","Indonesia","UAE","Sri Lanka","Kuwait","Nepal","Oman","Bahrain","Qatar","Syria","Jordan","Lebanon","China"]],
-    ["sawa-fx-8","Sawa Flex 240","2000i",100,"U",276,160,"","",["Yemen","Sudan","Philippines","Egypt","Bangladesh","India","Pakistan","Ethiopia","Indonesia","UAE","Sri Lanka","Kuwait","Nepal","Oman","Bahrain","Qatar","Syria","Jordan","Lebanon","China"]],
-    ["sawa-fx-9","Sawa Flex 340","2000i",140,"U",391,215,"3m","",["Yemen","Sudan","Philippines","Egypt","Bangladesh","India","Pakistan","Ethiopia","Indonesia","UAE","Sri Lanka","Kuwait","Nepal","Oman","Bahrain","Qatar","Syria","Jordan","Lebanon","China"]]
+    ["sawa-fx-1","Sawa Flex 25","65i",1,"",25,25,"","",["Yemen","Sudan","Philippines","Egypt","Bangladesh","India","Pakistan","Ethiopia","Indonesia","UAE","Sri Lanka","Kuwait","Nepal","Oman","Bahrain","Qatar","Syria","Jordan","Lebanon","China"],12],
+    ["sawa-fx-2","Sawa Flex Basic","100i",1,1,41,40,"","",["Yemen","Sudan","Philippines","Egypt","Bangladesh","India","Pakistan","Ethiopia","Indonesia","UAE","Sri Lanka","Kuwait","Nepal","Oman","Bahrain","Qatar","Syria","Jordan","Lebanon","China"],20],
+    ["sawa-fx-3","Sawa Flex 65","450i",10,15,75,65,"","",["Yemen","Sudan","Philippines","Egypt","Bangladesh","India","Pakistan","Ethiopia","Indonesia","UAE","Sri Lanka","Kuwait","Nepal","Oman","Bahrain","Qatar","Syria","Jordan","Lebanon","China"],36],
+    ["sawa-fx-4","Sawa Flex 75","600i",10,20,87,115,"","",["Yemen","Sudan","Philippines","Egypt","Bangladesh","India","Pakistan","Ethiopia","Indonesia","UAE","Sri Lanka","Kuwait","Nepal","Oman","Bahrain","Qatar","Syria","Jordan","Lebanon","China"],87],
+    ["sawa-fx-5","Sawa Flex 100","1100i",35,36,115,85,"","",["Yemen","Sudan","Philippines","Egypt","Bangladesh","India","Pakistan","Ethiopia","Indonesia","UAE","Sri Lanka","Kuwait","Nepal","Oman","Bahrain","Qatar","Syria","Jordan","Lebanon","China"],55],
+    ["sawa-fx-6","Sawa Flex 120","1300i",45,"U",138,95,"","",["Yemen","Sudan","Philippines","Egypt","Bangladesh","India","Pakistan","Ethiopia","Indonesia","UAE","Sri Lanka","Kuwait","Nepal","Oman","Bahrain","Qatar","Syria","Jordan","Lebanon","China"],66],
+    ["sawa-fx-7","Sawa Flex 150","1500i",60,"U",173,115,"","",["Yemen","Sudan","Philippines","Egypt","Bangladesh","India","Pakistan","Ethiopia","Indonesia","UAE","Sri Lanka","Kuwait","Nepal","Oman","Bahrain","Qatar","Syria","Jordan","Lebanon","China"],83],
+    ["sawa-fx-8","Sawa Flex 240","2000i",100,"U",276,160,"","",["Yemen","Sudan","Philippines","Egypt","Bangladesh","India","Pakistan","Ethiopia","Indonesia","UAE","Sri Lanka","Kuwait","Nepal","Oman","Bahrain","Qatar","Syria","Jordan","Lebanon","China"],132],
+    ["sawa-fx-9","Sawa Flex 340","2000i",140,"U",391,215,"3m","",["Yemen","Sudan","Philippines","Egypt","Bangladesh","India","Pakistan","Ethiopia","Indonesia","UAE","Sri Lanka","Kuwait","Nepal","Oman","Bahrain","Qatar","Syria","Jordan","Lebanon","China"],187]
    ],
    "dt":[
-    ["sawa-dt-1","","",120,"",230,140,"1m","",[]],
-    ["sawa-dt-2","","",250,"",460,250,"3m","",[]],
-    ["sawa-dt-3","","",350,"",633,335,"3m","",[]],
-    ["sawa-dt-4","","",300,"",575,305,"4m","",[]],
-    ["sawa-dt-5","","",400,"",748,390,"4m","",[]],
-    ["sawa-dt-6","","",600,"",1035,525,"6m","",[]],
-    ["sawa-dt-7","Max","","U","",391,215,"1m","",[]],
-    ["sawa-dt-8","Max","","U","",1139,575,"3m","",[]],
-    ["sawa-dt-9","","",70,"",138,130,"1m","",[]],
-    ["sawa-dt-10","Dash Cam","",30,"",443,355,"12m","",[]],
-    ["sawa-dt-11","Dash Cam","",20,"",265,225,"6m","",[]]
+    ["sawa-dt-1","","",120,"",230,140,"1m","",[],110],
+    ["sawa-dt-2","","",250,"",460,250,"3m","",[],220],
+    ["sawa-dt-3","","",350,"",633,335,"3m","",[],303],
+    ["sawa-dt-4","","",300,"",575,305,"4m","",[],275],
+    ["sawa-dt-5","","",400,"",748,390,"4m","",[],358],
+    ["sawa-dt-6","","",600,"",1035,525,"6m","",[],495],
+    ["sawa-dt-7","Max","","U","",391,215,"1m","",[],187],
+    ["sawa-dt-8","Max","","U","",1139,575,"3m","",[],545],
+    ["sawa-dt-9","","",70,"",138,130,"1m","",[],102],
+    ["sawa-dt-10","Dash Cam","",30,"",443,355,"12m","",[],327],
+    ["sawa-dt-11","Dash Cam","",20,"",265,225,"6m","",[],196]
    ]
   }},
  {"id":"salam","n":{"en":"Salam","ar":"سلام"},"c":"#16a34a","l":"Sl",
   "cats":{
    "cd":[
-    ["salam-cd-1","Solo 74","450",20,20,86,70,"","",[]],
-    ["salam-cd-2","Solo 99","1000",35,"U",113,85,"","",[]],
-    ["salam-cd-3","Solo 149","U",59,"U",172,115,"","",[]],
-    ["salam-cd-4","Solo 179","U",79,"U",207,130,"","",[]],
-    ["salam-cd-5","Solo 199","1800",80,"U",229,140,"","",[]],
-    ["salam-cd-6","Infinity + extra SIM","U","U","U",413,230,"","",[]],
-    ["salam-cd-7","Solo 160","1000",50,"U",184,120,"2m","",[]],
-    ["salam-cd-8","Solo 240","1000",90,"U",276,160,"3m","",[]],
-    ["salam-cd-9","Solo 340","1500",135,"U",391,215,"6m","",[]]
+    ["salam-cd-1","Solo 74","450",20,20,86,70,"","",[],42],
+    ["salam-cd-2","Solo 99","1000",35,"U",113,85,"","",[],55],
+    ["salam-cd-3","Solo 149","U",59,"U",172,115,"","",[],83],
+    ["salam-cd-4","Solo 179","U",79,"U",207,130,"","",[],100],
+    ["salam-cd-5","Solo 199","1800",80,"U",229,140,"","",[],109],
+    ["salam-cd-6","Infinity + extra SIM","U","U","U",413,230,"","",[],198],
+    ["salam-cd-7","Solo 160","1000",50,"U",184,120,"2m","",[],88],
+    ["salam-cd-8","Solo 240","1000",90,"U",276,160,"3m","",[],132],
+    ["salam-cd-9","Solo 340","1500",135,"U",391,215,"6m","",[],187]
    ],
    "fx":[
-    ["salam-fx-1","Flex 85","500l",12,12,98,75,"","",[]],
-    ["salam-fx-2","Flex 110","1000l",35,30,127,90,"","",[]],
-    ["salam-fx-3","Flex 150","1200l",55,"U",173,115,"","",[]],
-    ["salam-fx-4","Flex 200","1500l",65,"U",230,140,"","",[]]
+    ["salam-fx-1","Flex 85","500l",12,12,98,75,"","",[],47],
+    ["salam-fx-2","Flex 110","1000l",35,30,127,90,"","",[],61],
+    ["salam-fx-3","Flex 150","1200l",55,"U",173,115,"","",[],83],
+    ["salam-fx-4","Flex 200","1500l",65,"U",230,140,"","",[],110]
    ],
    "dt":[
-    ["salam-dt-1","","",10,"",80,90,"","",[]],
-    ["salam-dt-2","","",50,"",132,130,"","",[]],
-    ["salam-dt-3","","",100,"",189,170,"","",[]],
-    ["salam-dt-4","","",10,10,132,130,"2m","",[]],
-    ["salam-dt-5","","",30,30,201,180,"3m","",[]],
-    ["salam-dt-6","","",50,50,224,195,"3m","",[]],
-    ["salam-dt-7","","",100,100,343,285,"3m","",[]],
-    ["salam-dt-8","","",150,150,458,370,"3m","",[]],
-    ["salam-dt-9","","",300,"",517,410,"3m","",[]],
-    ["salam-dt-10","","","U","U",373,305,"","",[]]
+    ["salam-dt-1","","",10,"",80,90,"","",[],59],
+    ["salam-dt-2","","",50,"",132,130,"","",[],98],
+    ["salam-dt-3","","",100,"",189,170,"","",[],140],
+    ["salam-dt-4","","",10,10,132,130,"2m","",[],98],
+    ["salam-dt-5","","",30,30,201,180,"3m","",[],149],
+    ["salam-dt-6","","",50,50,224,195,"3m","",[],166],
+    ["salam-dt-7","","",100,100,343,285,"3m","",[],254],
+    ["salam-dt-8","","",150,150,458,370,"3m","",[],339],
+    ["salam-dt-9","","",300,"",517,410,"3m","",[],382],
+    ["salam-dt-10","","","U","U",373,305,"","",[],276]
    ]
   }},
  {"id":"friendi","n":{"en":"Friendi","ar":"فرندي"},"c":"#0891b2","l":"Fr",
   "cats":{
    "cd":[
-    ["friendi-cd-1","","120",1,"",20,20,"14d","",[]],
-    ["friendi-cd-2","","250",20,30,81,70,"","",[]],
-    ["friendi-cd-3","","500",30,40,98,75,"","",[]],
-    ["friendi-cd-4","","700",40,"U",113,85,"","",[]],
-    ["friendi-cd-5","","1000",45,"U",126,90,"","",[]],
-    ["friendi-cd-6","","U",55,"U",171,115,"","",[]],
-    ["friendi-cd-7","","800",100,"",367,300,"3m","",[]]
+    ["friendi-cd-1","","120",1,"",20,20,"14d","",[],9],
+    ["friendi-cd-2","","250",20,30,81,70,"","",[],39],
+    ["friendi-cd-3","","500",30,40,98,75,"","",[],46],
+    ["friendi-cd-4","","700",40,"U",113,85,"","",[],54],
+    ["friendi-cd-5","","1000",45,"U",126,90,"","",[],60],
+    ["friendi-cd-6","","U",55,"U",171,115,"","",[],82],
+    ["friendi-cd-7","","800",100,"",367,300,"3m","",[],271]
    ],
    "fx":[
-    ["friendi-fx-1","","150l",2,2,48,55,"","",[]],
-    ["friendi-fx-2","","150l",3,3,23,40,"7d","",[]],
-    ["friendi-fx-3","","300l",6,6,69,65,"","",[]],
-    ["friendi-fx-4","","1000l",35,35,115,85,"","",[]],
-    ["friendi-fx-5","","1200l",40,"U",127,90,"","",[]],
-    ["friendi-fx-6","","1500l",100,"U",345,285,"3m","",[]]
+    ["friendi-fx-1","","150l",2,2,48,55,"","",[],23],
+    ["friendi-fx-2","","150l",3,3,23,40,"7d","",[],11],
+    ["friendi-fx-3","","300l",6,6,69,65,"","",[],33],
+    ["friendi-fx-4","","1000l",35,35,115,85,"","",[],55],
+    ["friendi-fx-5","","1200l",40,"U",127,90,"","",[],61],
+    ["friendi-fx-6","","1500l",100,"U",345,285,"3m","",[],255]
    ],
    "dt":[
-    ["friendi-dt-1","","",50,"",201,125,"3m","",[]],
-    ["friendi-dt-2","","",75,"",293,245,"3m","",[]],
-    ["friendi-dt-3","","",200,"",370,305,"3m","",[]],
-    ["friendi-dt-4","","",300,"",518,415,"3m","",[]],
-    ["friendi-dt-5","","","U","",374,305,"1m","",[]]
+    ["friendi-dt-1","","",50,"",201,125,"3m","",[],96],
+    ["friendi-dt-2","","",75,"",293,245,"3m","",[],217],
+    ["friendi-dt-3","","",200,"",370,305,"3m","",[],274],
+    ["friendi-dt-4","","",300,"",518,415,"3m","",[],383],
+    ["friendi-dt-5","","","U","",374,305,"1m","",[],276]
    ]
   }},
  {"id":"virgin","n":{"en":"Virgin","ar":"فيرجن"},"c":"#dc2626","l":"Vi",
   "cats":{
    "cd":[
-    ["virgin-cd-1","","250",3,1,52,55,"","",[]],
-    ["virgin-cd-2","","350",20,20,81,70,"","",[]],
-    ["virgin-cd-3","","750",40,"U",115,85,"","",[]],
-    ["virgin-cd-4","","745",45,"U",124,90,"","",[]],
-    ["virgin-cd-5","","U",55,"U",173,115,"","",[]],
-    ["virgin-cd-6","","U",80,"U",226,140,"","",[]],
-    ["virgin-cd-7","","U","U","U",410,335,"","",[]]
+    ["virgin-cd-1","","250",3,1,52,55,"","",[],25],
+    ["virgin-cd-2","","350",20,20,81,70,"","",[],39],
+    ["virgin-cd-3","","750",40,"U",115,85,"","",[],55],
+    ["virgin-cd-4","","745",45,"U",124,90,"","",[],59],
+    ["virgin-cd-5","","U",55,"U",173,115,"","",[],83],
+    ["virgin-cd-6","","U",80,"U",226,140,"","",[],108],
+    ["virgin-cd-7","","U","U","U",410,335,"","",[],303]
    ],
    "fx":[
-    ["virgin-fx-1","","300l",6,6,70,65,"","",[]],
-    ["virgin-fx-2","","1000l",35,35,115,85,"","",[]],
-    ["virgin-fx-3","","1500l",100,"U",345,285,"3m","",[]]
+    ["virgin-fx-1","","300l",6,6,70,65,"","",[],33],
+    ["virgin-fx-2","","1000l",35,35,115,85,"","",[],55],
+    ["virgin-fx-3","","1500l",100,"U",345,285,"3m","",[],255]
    ],
    "dt":[
-    ["virgin-dt-1","","",50,"",96,110,"1m","",[]],
-    ["virgin-dt-2","","",75,75,225,215,"2m","",[]],
-    ["virgin-dt-3","","",100,"",173,175,"1m","",[]],
-    ["virgin-dt-4","","",100,"",247,235,"6m","",[]],
-    ["virgin-dt-5","","",125,100,337,310,"3m","",[]],
-    ["virgin-dt-6","","",300,"",518,460,"3m","",[]],
-    ["virgin-dt-7","","",300,"",534,470,"6m","",[]],
-    ["virgin-dt-8","","",600,"",1011,865,"6m","",[]],
-    ["virgin-dt-9","","","U","",365,330,"1m","",[]]
+    ["virgin-dt-1","","",50,"",96,110,"1m","",[],79],
+    ["virgin-dt-2","","",75,75,225,215,"2m","",[],186],
+    ["virgin-dt-3","","",100,"",173,175,"1m","",[],143],
+    ["virgin-dt-4","","",100,"",247,235,"6m","",[],204],
+    ["virgin-dt-5","","",125,100,337,310,"3m","",[],278],
+    ["virgin-dt-6","","",300,"",518,460,"3m","",[],428],
+    ["virgin-dt-7","","",300,"",534,470,"6m","",[],441],
+    ["virgin-dt-8","","",600,"",1011,865,"6m","",[],835],
+    ["virgin-dt-9","","","U","",365,330,"1m","",[],301]
    ]
   }},
  {"id":"libara","n":{"en":"Libara","ar":"ليبارا"},"c":"#52525b","l":"Li",
   "cats":{
    "cd":[
-    ["libara-cd-1","Libara 60","400a",6,9,69,70,"","",[]],
-    ["libara-cd-2","Libara 70","350a",15,20,81,80,"","",[]],
-    ["libara-cd-3","Libara 90","600a",35,55,104,105,"","",[]],
-    ["libara-cd-4","Libara 100","900l",30,30,115,115,"","",[]],
-    ["libara-cd-5","Libara 110","1100",40,"U",126,125,"","",[]],
-    ["libara-cd-6","Libara 114","",50,"U",132,130,"","",[]]
+    ["libara-cd-1","Libara 60","400a",6,9,69,70,"","",[],51],
+    ["libara-cd-2","Libara 70","350a",15,20,81,80,"","",[],59],
+    ["libara-cd-3","Libara 90","600a",35,55,104,105,"","",[],76],
+    ["libara-cd-4","Libara 100","900l",30,30,115,115,"","",[],85],
+    ["libara-cd-5","Libara 110","1100",40,"U",126,125,"","",[],93],
+    ["libara-cd-6","Libara 114","",50,"U",132,130,"","",[],97]
    ]
   }},
  {"id":"redbull","n":{"en":"Red Bull","ar":"ريد بول"},"c":"#1e3a8a","l":"RB",
   "cats":{
    "cd":[
-    ["redbull-cd-1","Mazaji 80","500",25,35,92,75,"","",[]],
-    ["redbull-cd-2","Mazaji 95","800",30,"U",109,85,"","",[]],
-    ["redbull-cd-3","Mazaji 120","1050",50,"U",138,95,"","",[]],
-    ["redbull-cd-4","Mazaji 130","1200",55,"U",150,100,"","",[]],
-    ["redbull-cd-5","Mazaji 160 Plus","U",66,"U",184,120,"","",[]],
-    ["redbull-cd-6","Mazaji 360 Plus","U","U","U",414,230,"","",[]]
+    ["redbull-cd-1","Mazaji 80","500",25,35,92,75,"","",[],44],
+    ["redbull-cd-2","Mazaji 95","800",30,"U",109,85,"","",[],53],
+    ["redbull-cd-3","Mazaji 120","1050",50,"U",138,95,"","",[],66],
+    ["redbull-cd-4","Mazaji 130","1200",55,"U",150,100,"","",[],72],
+    ["redbull-cd-5","Mazaji 160 Plus","U",66,"U",184,120,"","",[],88],
+    ["redbull-cd-6","Mazaji 360 Plus","U","U","U",414,230,"","",[],198]
    ],
    "fx":[
-    ["redbull-fx-1","Flex 200","600l",89,"U",230,140,"","",[]],
-    ["redbull-fx-2","Flex 300","1300l",100,"U",345,195,"90d","",[]],
-    ["redbull-fx-3","Flex 350","1450l",145,"U",403,225,"120d","",[]]
+    ["redbull-fx-1","Flex 200","600l",89,"U",230,140,"","",[],110],
+    ["redbull-fx-2","Flex 300","1300l",100,"U",345,195,"90d","",[],165],
+    ["redbull-fx-3","Flex 350","1450l",145,"U",403,225,"120d","",[],193]
    ],
    "dt":[
-    ["redbull-dt-1","","",12,12,75,65,"1m","",[]],
-    ["redbull-dt-2","","",30,30,98,75,"1m","",[]],
-    ["redbull-dt-3","","",50,50,150,100,"1m","",[]],
-    ["redbull-dt-4","","","U","",374,210,"1m","",[]],
-    ["redbull-dt-5","","",80,80,242,145,"2m","",[]],
-    ["redbull-dt-6","","",200,"",345,195,"3m","",[]],
-    ["redbull-dt-7","","",250,100,552,295,"3m","",[]]
+    ["redbull-dt-1","","",12,12,75,65,"1m","",[],36],
+    ["redbull-dt-2","","",30,30,98,75,"1m","",[],47],
+    ["redbull-dt-3","","",50,50,150,100,"1m","",[],72],
+    ["redbull-dt-4","","","U","",374,210,"1m","",[],179],
+    ["redbull-dt-5","","",80,80,242,145,"2m","",[],116],
+    ["redbull-dt-6","","",200,"",345,195,"3m","",[],165],
+    ["redbull-dt-7","","",250,100,552,295,"3m","",[],264]
    ]
   }},
  {"id":"jawy","n":{"en":"Jawy","ar":"جوي"},"c":"#ea580c","l":"Jw",
   "cats":{
    "cd":[
-    ["jawy-cd-1","Jawy 200","1300",101,"U",230,140,"","",[]],
-    ["jawy-cd-2","Jawy 150","1000",71,"U",173,115,"","",[]],
-    ["jawy-cd-3","Jawy 110","750",45,"U",127,90,"","",[]],
-    ["jawy-cd-4","Jawy 90","500",33,"U",104,80,"","",[]],
-    ["jawy-cd-5","Jawy 70","350",21,20,81,70,"","",[]],
-    ["jawy-cd-6","Jawy 45","250",3,1,52,55,"","",[]]
+    ["jawy-cd-1","Jawy 200","1300",101,"U",230,140,"","",[],110],
+    ["jawy-cd-2","Jawy 150","1000",71,"U",173,115,"","",[],83],
+    ["jawy-cd-3","Jawy 110","750",45,"U",127,90,"","",[],61],
+    ["jawy-cd-4","Jawy 90","500",33,"U",104,80,"","",[],50],
+    ["jawy-cd-5","Jawy 70","350",21,20,81,70,"","",[],39],
+    ["jawy-cd-6","Jawy 45","250",3,1,52,55,"","",[],25]
    ],
    "fx":[
-    ["jawy-fx-1","Flex 400","3000l",150,150,460,250,"120d","",[]],
-    ["jawy-fx-2","Flex 300","1600l",100,"U",345,195,"90d","",[]],
-    ["jawy-fx-3","Flex 205","1400l",80,"U",236,145,"60d","",[]],
-    ["jawy-fx-4","Flex 155","1500l",63,"U",188,125,"","",[]],
-    ["jawy-fx-5","Flex 125","1100l",47,"U",144,100,"","",[]],
-    ["jawy-fx-6","Flex 105","1010l",40,35,121,90,"","",[]],
-    ["jawy-fx-7","Flex 75","400l",14,11,87,70,"","",[]],
-    ["jawy-fx-8","Flex 50","100l",4,0,58,60,"","",[]]
+    ["jawy-fx-1","Flex 400","3000l",150,150,460,250,"120d","",[],220],
+    ["jawy-fx-2","Flex 300","1600l",100,"U",345,195,"90d","",[],165],
+    ["jawy-fx-3","Flex 205","1400l",80,"U",236,145,"60d","",[],113],
+    ["jawy-fx-4","Flex 155","1500l",63,"U",188,125,"","",[],95],
+    ["jawy-fx-5","Flex 125","1100l",47,"U",144,100,"","",[],69],
+    ["jawy-fx-6","Flex 105","1010l",40,35,121,90,"","",[],58],
+    ["jawy-fx-7","Flex 75","400l",14,11,87,70,"","",[],42],
+    ["jawy-fx-8","Flex 50","100l",4,0,58,60,"","",[],28]
    ],
    "dt":[
-    ["jawy-dt-1","Data 400","",260,"",460,250,"","",[]],
-    ["jawy-dt-2","Data 240","",160,"",276,160,"","",[]],
-    ["jawy-dt-3","Data 180","",120,"",207,95,"","",[]]
+    ["jawy-dt-1","Data 400","",260,"",460,250,"","",[],220],
+    ["jawy-dt-2","Data 240","",160,"",276,160,"","",[],132],
+    ["jawy-dt-3","Data 180","",120,"",207,95,"","",[],63]
    ]
   }},
  {"id":"zain","n":{"en":"Zain","ar":"زين"},"c":"#65a30d","l":"Zn",
   "cats":{
    "cd":[
-    ["zain-cd-1","Shabab 49","100",2,2,49,40,"","WhatsApp;Snapchat;Twitter;YouTube;Jaco;Facebook;Instagram",[]],
-    ["zain-cd-2","Shabab 79","500",15,15,79,60,"","WhatsApp;Snapchat;Twitter;YouTube;Jaco;Facebook;Instagram",[]],
-    ["zain-cd-3","Shabab 119","1500",30,"U",119,70,"","WhatsApp;Snapchat;Twitter;YouTube;Jaco;Facebook;Instagram",[]],
-    ["zain-cd-4","Shabab 119","4500",90,"U",357,90,"12w","WhatsApp;Snapchat;Twitter;YouTube;Jaco;Facebook;Instagram",[]],
-    ["zain-cd-5","Shabab 169","U",55,"U",169,105,"","WhatsApp;Snapchat;Twitter;YouTube;Jaco;Facebook;Instagram",[]],
-    ["zain-cd-6","Shabab 409","U","U","U",409,196,"","WhatsApp;Snapchat;Twitter;YouTube;Jaco;Facebook;Instagram",[]]
+    ["zain-cd-1","Shabab 49","100",2,2,49,40,"","WhatsApp;Snapchat;Twitter;YouTube;Jaco;Facebook;Instagram",[],24],
+    ["zain-cd-2","Shabab 79","500",15,15,79,60,"","WhatsApp;Snapchat;Twitter;YouTube;Jaco;Facebook;Instagram",[],38],
+    ["zain-cd-3","Shabab 119","1500",30,"U",119,70,"","WhatsApp;Snapchat;Twitter;YouTube;Jaco;Facebook;Instagram",[],57],
+    ["zain-cd-4","Shabab 119","4500",90,"U",357,90,"12w","WhatsApp;Snapchat;Twitter;YouTube;Jaco;Facebook;Instagram",[],171],
+    ["zain-cd-5","Shabab 169","U",55,"U",169,105,"","WhatsApp;Snapchat;Twitter;YouTube;Jaco;Facebook;Instagram",[],81],
+    ["zain-cd-6","Shabab 409","U","U","U",409,196,"","WhatsApp;Snapchat;Twitter;YouTube;Jaco;Facebook;Instagram",[],196]
    ],
    "fx":[
-    ["zain-fx-1","Flex 29","100",1,1,34,35,"","Facebook;YouTube;WhatsApp;Telegram",["Sudan","Pakistan","India","Yemen","Bangladesh","Indonesia","Kuwait","Egypt"]],
-    ["zain-fx-2","Flex 69","300",10,15,80,70,"","Facebook;YouTube;WhatsApp;Telegram",["Sudan","Pakistan","India","Yemen","Bangladesh","Indonesia","Kuwait","Egypt"]],
-    ["zain-fx-3","Flex 109","800",35,"U",126,90,"","Facebook;YouTube;WhatsApp;Telegram",["Sudan","Pakistan","India","Yemen","Bangladesh","Indonesia","Kuwait","Egypt"]],
-    ["zain-fx-4","Flex Sudan 109","2000",25,"U",126,90,"","Facebook;YouTube;WhatsApp;Telegram",[]],
-    ["zain-fx-5","Flex 139","1000",50,"U",160,105,"","Facebook;YouTube;WhatsApp;Telegram",["Sudan","Pakistan","India","Yemen","Bangladesh","Indonesia","Kuwait","Egypt"]],
-    ["zain-fx-6","Flex 169","1250",60,"U",195,125,"","Facebook;YouTube;WhatsApp;Telegram",["Sudan","Pakistan","India","Yemen","Bangladesh","Indonesia","Kuwait","Egypt"]],
-    ["zain-fx-7","Flex 329","1000",135,"U",379,210,"3m","Facebook;YouTube;WhatsApp;Telegram",["Sudan","Pakistan","India","Yemen","Bangladesh","Indonesia","Kuwait","Egypt"]]
+    ["zain-fx-1","Flex 29","100",1,1,34,35,"","Facebook;YouTube;WhatsApp;Telegram",["Sudan","Pakistan","India","Yemen","Bangladesh","Indonesia","Kuwait","Egypt"],16],
+    ["zain-fx-2","Flex 69","300",10,15,80,70,"","Facebook;YouTube;WhatsApp;Telegram",["Sudan","Pakistan","India","Yemen","Bangladesh","Indonesia","Kuwait","Egypt"],38],
+    ["zain-fx-3","Flex 109","800",35,"U",126,90,"","Facebook;YouTube;WhatsApp;Telegram",["Sudan","Pakistan","India","Yemen","Bangladesh","Indonesia","Kuwait","Egypt"],60],
+    ["zain-fx-4","Flex Sudan 109","2000",25,"U",126,90,"","Facebook;YouTube;WhatsApp;Telegram",[],60],
+    ["zain-fx-5","Flex 139","1000",50,"U",160,105,"","Facebook;YouTube;WhatsApp;Telegram",["Sudan","Pakistan","India","Yemen","Bangladesh","Indonesia","Kuwait","Egypt"],77],
+    ["zain-fx-6","Flex 169","1250",60,"U",195,125,"","Facebook;YouTube;WhatsApp;Telegram",["Sudan","Pakistan","India","Yemen","Bangladesh","Indonesia","Kuwait","Egypt"],93],
+    ["zain-fx-7","Flex 329","1000",135,"U",379,210,"3m","Facebook;YouTube;WhatsApp;Telegram",["Sudan","Pakistan","India","Yemen","Bangladesh","Indonesia","Kuwait","Egypt"],181]
    ],
    "dt":[
-    ["zain-dt-1","","",30,30,202,125,"3m","YouTube;Facebook",[]],
-    ["zain-dt-2","","",30,50,114,85,"1m","YouTube;Facebook",[]],
-    ["zain-dt-3","80 GB","",75,75,229,140,"2m","YouTube;Facebook",[]],
-    ["zain-dt-4","","",125,100,344,195,"3m","YouTube;Facebook",[]],
-    ["zain-dt-5","","",150,150,459,250,"3m","YouTube;Facebook",[]],
-    ["zain-dt-6","","",105,"",184,120,"1m","",[]],
-    ["zain-dt-7","300 Plus","","1TB","",518,280,"3m","",[]],
-    ["zain-dt-8","","",300,"",518,280,"3m","",[]],
-    ["zain-dt-9","","","U","",1149,580,"3m","",[]],
-    ["zain-dt-10","","","U","",374,210,"1m","",[]],
-    ["zain-dt-11","","","U","",2299,1130,"6m","",[]]
+    ["zain-dt-1","","",30,30,202,125,"3m","YouTube;Facebook",[],97],
+    ["zain-dt-2","","",30,50,114,85,"1m","YouTube;Facebook",[],55],
+    ["zain-dt-3","80 GB","",75,75,229,140,"2m","YouTube;Facebook",[],110],
+    ["zain-dt-4","","",125,100,344,195,"3m","YouTube;Facebook",[],165],
+    ["zain-dt-5","","",150,150,459,250,"3m","YouTube;Facebook",[],220],
+    ["zain-dt-6","","",105,"",184,120,"1m","",[],88],
+    ["zain-dt-7","300 Plus","","1TB","",518,280,"3m","",[],248],
+    ["zain-dt-8","","",300,"",518,280,"3m","",[],248],
+    ["zain-dt-9","","","U","",1149,580,"3m","",[],550],
+    ["zain-dt-10","","","U","",374,210,"1m","",[],179],
+    ["zain-dt-11","","","U","",2299,1130,"6m","",[],1100]
    ],
    "vz":[
-    ["zain-vz-1","Visitors 40","60",6,"",40,40,"2w","",["Yemen","UAE","Nigeria","Bangladesh","Indonesia","Pakistan","India","Egypt","Kuwait","Sudan","Malaysia","China","Thailand","Australia","France","Iraq","USA","Kazakhstan","Libya","Algeria"]],
-    ["zain-vz-2","Visitors 60","150",25,"",60,60,"2w","",["Yemen","UAE","Nigeria","Bangladesh","Indonesia","Pakistan","India","Egypt","Kuwait","Sudan","Malaysia","China","Thailand","Australia","France","Iraq","USA","Kazakhstan","Libya","Algeria"]],
-    ["zain-vz-3","Visitors 85","250v",30,"",85,70,"3w","",[]],
-    ["zain-vz-4","Visitors 120","350v",48,"Uc",120,90,"4w","",[]],
-    ["zain-vz-5","Visitors 160","500v",68,"Uc",160,105,"4w","",[]]
+    ["zain-vz-1","Visitors 40","60",6,"",40,40,"2w","",["Yemen","UAE","Nigeria","Bangladesh","Indonesia","Pakistan","India","Egypt","Kuwait","Sudan","Malaysia","China","Thailand","Australia","France","Iraq","USA","Kazakhstan","Libya","Algeria"],20],
+    ["zain-vz-2","Visitors 60","150",25,"",60,60,"2w","",["Yemen","UAE","Nigeria","Bangladesh","Indonesia","Pakistan","India","Egypt","Kuwait","Sudan","Malaysia","China","Thailand","Australia","France","Iraq","USA","Kazakhstan","Libya","Algeria"],29],
+    ["zain-vz-3","Visitors 85","250v",30,"",85,70,"3w","",[],41],
+    ["zain-vz-4","Visitors 120","350v",48,"Uc",120,90,"4w","",[],58],
+    ["zain-vz-5","Visitors 160","500v",68,"Uc",160,105,"4w","",[],77]
    ]
   }}
 ]
