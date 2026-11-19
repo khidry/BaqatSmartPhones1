@@ -305,6 +305,7 @@ function composeFromApi(base,j){
 function readCache(){try{const c=JSON.parse(localStorage.getItem(CACHE_KEY)||"null");return c&&c.obj&&c.obj.companies?c:null;}catch(e){return null;}}
 function writeCache(obj,info){try{localStorage.setItem(CACHE_KEY,JSON.stringify({obj:stripCost(obj),info:info}));}catch(e){}}
 let PENDING=null;
+let API_STATE={ok:null,err:""};
 function applyFresh(obj,info,manual){
   setData(obj,info);writeCache(obj,info);route();if(manual)toast(t("refreshed"));
 }
@@ -325,6 +326,7 @@ function loadData(manual){
       const p={action:"offers"};if(ADMIN.on)p.pin=ADMIN.pin;
       apiGet(p,function(e2,j){
         const o=!e2&&j&&j.ok&&composeFromApi(base,j);
+        API_STATE=o?{ok:true,err:""}:{ok:false,err:e2?String(e2.message||e2):(j&&!j.ok?String(j.error):"no rows")};
         if(o)fin(o,{src:"api",updated:String(j.version||"").slice(0,10),ver:String(j.version)});
         else fin(base,{src:"json",updated:base.updated||"",ver:String(base.rev||base.updated||"0")});});
     }else fin(base,{src:"json",updated:base.updated||"",ver:String(base.rev||base.updated||"0")});
@@ -333,6 +335,7 @@ function loadData(manual){
 function errScreen(){$("#view").innerHTML=`<div class="empty">⚠️<br>${t("load_err")}<br><br><button class="btn" data-act="retry">${t("retry")}</button></div>`;}
 
 /* ---------- view state ---------- */
+const dg=(ar,en)=>S.lang==="ar"?ar:en;
 let VS={hv:"",htol:"10",hcat:"all",hsort:"c",hctry:"",pcat:"all",psort:"c",pctry:"",cmode:"price",pv:"",tol:"10",cid:"",ccat:"all",csort:"n",cctry:"",cc:"",sq:"",smax:"",ssort:"o"};
 let LASTLIST=[];
 const tile=(c,cls)=>{const src=CFG.logoDir?CFG.logoDir+c.id+".png":"";return `<div class="ic ${src?"lg ":""}${cls||""}" style="background:linear-gradient(135deg,${c.c},${c.c}cc)"><span>${c.l}</span>${src?`<img src="${src}" alt="" onerror="this.parentNode.removeChild(this)">`:""}</div>`;};
@@ -475,7 +478,8 @@ function vSettings(){
   ${installed()?"":`<div class="sec"><div class="row"><span>📲 ${t("install")}</span><button class="btn" data-act="install">⬇ ${t("install")}</button></div></div>`}
   ${adm}
   <div class="sec"><div class="row"><span>${t("theme")}</span><div class="seg">${th("auto",t("th_auto"))}${th("light",t("th_light"))}${th("dark",t("th_dark"))}</div></div></div>
-  <div class="sec"><h3>${t("prices")}</h3><div class="row"><span><b dir="ltr">${esc(DATA_INFO.updated||"-")}</b></span><button class="btn g" data-act="refreshp">${t("refreshp")}</button></div></div>
+  <div class="sec"><h3>${t("prices")}</h3><div class="row"><span><b dir="ltr">${esc(DATA_INFO.updated||"-")}</b></span><button class="btn g" data-act="refreshp">${t("refreshp")}</button></div>
+  <div class="row"><span>🔗 ${dg("ربط الشيت","Sheet link")}: <b>${!CFG.apiUrl?dg("غير مفعّل","off"):API_STATE.ok===false?"❌":API_STATE.ok?"✅":"…"}</b></span><button class="btn g" data-act="chklink">🔌 ${dg("فحص الربط","Check link")}</button></div></div>
   <div class="sec"><h3>${t("ver")}</h3><div class="row"><span data-act="ver">${t("ver")} <b dir="ltr">${APP_VERSION}</b></span><button class="btn" data-act="check" id="chkBtn">${t("update")}</button></div></div>
   <div class="sec"><h3>${t("pages")}</h3>${["terms","privacy","about","contact"].map(p=>`<button class="lnk" data-act="page" data-v="${p}"><span>${t(p)}</span><span>${RTL[S.lang]?"‹":"›"}</span></button>`).join("")}</div>`;
 }
@@ -530,7 +534,8 @@ function renderAdminBar(){
   if(!ADMIN.on){el.innerHTML="";el.style.display="none";return;}
   const noCost=ALL.length&&ALL.every(function(o){return o.k===null;});
   el.style.display="flex";
-  el.innerHTML=`<span>🛠 ${t("admin_on")}</span>${noCost?`<button data-act="impcost">⚠ ${t("cost")}: ${t("import_cost")}</button>`:""}<button data-act="adminExit">${t("admin_off")} ✕</button>`;
+  const nLocal=CFG.apiUrl?(L.adds.length+Object.keys(L.edits).length):0;
+  el.innerHTML=`<span>🛠 ${t("admin_on")}</span>${nLocal?`<button data-act="chklink">⚠ ${dg("تعديلات محلية غير مرفوعة","Unsent local changes")} (${nLocal})</button>`:""}${noCost?`<button data-act="impcost">⚠ ${t("cost")}: ${t("import_cost")}</button>`:""}<button data-act="adminExit">${t("admin_off")} ✕</button>`;
 }
 
 /* ---------- modal / toast / theme / lang ---------- */
@@ -582,8 +587,7 @@ function adminLogin(pin,cb){
     if(CFG.adminPin&&pin===String(CFG.adminPin)){ADMIN.on=true;ADMIN.pin=pin;rebuild();cb(null);}else cb("pin");
   }
 }
-function leaveAdmin(){ADMIN.on=false;ADMIN.pin="";ADMIN.edit="";
-  const c=readCache();if(c)setData(c.obj,c.info);else rebuild();}
+function leaveAdmin(){ADMIN.on=false;ADMIN.pin="";ADMIN.edit="";rebuild();}
 function editLogin(pin,cb){
   if(CFG.apiUrl){apiGet({action:"checkedit",pin:pin},function(e,j){if(e||!j)return cb("net");if(!j.ok)return cb("pin");ADMIN.edit=pin;cb(null);});}
   else{if(CFG.editPin&&pin===String(CFG.editPin)){ADMIN.edit=pin;cb(null);}else cb("pin");}
@@ -706,6 +710,76 @@ function diagnose(){
       else{lines.push("sheets: "+j2.sheets.join(", "));lines.push("Offers header: "+j2.header.join(","));lines.push("rows: "+j2.rows+" | rows with cost: "+j2.costRows+" | rows without id: "+j2.noId);}
       lines.push("app rows: "+ALL.length+" | with cost: "+ALL.filter(function(o){return o.k!==null;}).length);
       show();});});
+}
+
+/* ---------- sheet link check (for everyone) ---------- */
+function rawGet(url,cb){
+  try{const x=new XMLHttpRequest();x.open("GET",url);x.timeout=20000;
+    x.onreadystatechange=function(){if(x.readyState!==4)return;cb({status:x.status,text:x.responseText||""});};
+    x.ontimeout=function(){cb({status:-1,text:""});};x.send();}catch(e){cb({status:-2,text:String(e)});}
+}
+function pendingLocal(){return L.adds.length+Object.keys(L.edits).length;}
+function checkLink(){
+  const lines=[];let serverVer="",serverRows=-1;
+  const P=function(ok,a,e){lines.push((ok===true?"✅ ":ok===false?"❌ ":"⚠️ ")+dg(a,e));};
+  const finish=function(){
+    const nl=pendingLocal();
+    modal(`<h3>🔌 ${dg("فحص ربط الشيت","Sheet link check")}</h3><div class="logl" style="line-height:1.9;font-size:13.5px">${lines.map(function(x){return "<div>"+esc(x)+"</div>";}).join("")}</div><div class="acts">${CFG.apiUrl?`<button class="btn" data-act="chkrefresh">${t("refreshp")}</button>`:""}${CFG.apiUrl&&nl?`<button class="btn" data-act="pushlocal">⬆ ${dg("رفع التعديلات المحلية للشيت","Upload local changes")} (${nl})</button>`:""}<button class="btn g" data-act="close">${t("close")}</button></div>`,"wide");
+  };
+  if(!CFG.apiUrl){
+    P(false,"رابط السكريبت (apiUrl) فاضي في config.js على هذا الجهاز، فالتطبيق يعرض بيانات الملف فقط.","apiUrl is empty in config.js on this device, so the app shows the file data only.");
+    P(null,"لو رفعت config.js مؤخرًا: انتظر دقيقتين وأعد فتح التطبيق، أو غيّر رقم الإصدار في index.html (APP_VERSION و ?v=) وارفعه.","If you just uploaded config.js: wait two minutes and reopen the app, or bump the version in index.html (APP_VERSION and ?v=) and upload it.");
+    if(pendingLocal())P(null,"يوجد "+pendingLocal()+" تعديل/إضافة محفوظة على هذا الجهاز فقط (لم تصل للشيت).",pendingLocal()+" change(s) saved on this device only (not in the sheet).");
+    finish();return;
+  }
+  const u=CFG.apiUrl;
+  if(/\/dev(\?.*)?$/.test(u))P(false,"الرابط ينتهي بـ /dev وهو رابط تجريبي لا يعمل إلا لصاحب الحساب. انشر Deploy ← New deployment واستخدم الرابط الذي ينتهي بـ /exec.","The URL ends with /dev (test URL, works only for the owner). Use Deploy > New deployment and the URL ending in /exec.");
+  else if(!/^https:\/\/script\.google\.com\/macros\/s\/[^\/]+\/exec/.test(u))P(null,"شكل الرابط غير معتاد. المتوقع: https://script.google.com/macros/s/…/exec","Unusual URL. Expected: https://script.google.com/macros/s/…/exec");
+  else P(true,"شكل الرابط صحيح.","URL format looks right.");
+  const q=function(a){return u+(u.indexOf("?")>-1?"&":"?")+"action="+a+"&_="+Date.now();};
+  rawGet(q("version"),function(r){
+    const tx=r.text.replace(/^\s+/,"");let j=null;
+    if(r.status<=0){P(false,"تعذر الوصول للسكريبت من هذا الجهاز (انترنت أو رابط خطأ أو منع CORS).","Couldn't reach the script from this device (network, wrong URL or CORS).");finish();return;}
+    if(tx.charAt(0)==="<"){P(false,"جوجل رجّعت صفحة ويب بدل البيانات. السبب غالبًا أن Who has access ليس Anyone أو لم تُمنح الصلاحيات. افتح Deploy ← Manage deployments ← Edit ← Who has access = Anyone ← New version ← Deploy.","Google returned a web page instead of data. Usually 'Who has access' is not 'Anyone' or authorization is missing. Deploy > Manage deployments > Edit > Who has access = Anyone > New version > Deploy.");finish();return;}
+    try{j=JSON.parse(tx);}catch(e){}
+    if(!j){P(false,"رد السكريبت ليس JSON (HTTP "+r.status+").","The script reply is not JSON (HTTP "+r.status+").");finish();return;}
+    if(!j.ok){P(false,"السكريبت رد بخطأ: "+j.error,"The script returned an error: "+j.error);finish();return;}
+    serverVer=String(j.version);P(true,"السكريبت يعمل. نسخة بيانات الشيت: "+serverVer,"Script is working. Sheet data version: "+serverVer);
+    rawGet(q("offers"),function(r2){
+      let o=null;try{o=JSON.parse(r2.text);}catch(e){}
+      if(!o||!o.ok){P(false,"تعذر قراءة الباقات من الشيت.","Couldn't read the packages from the sheet.");}
+      else{serverRows=(o.rows||[]).length;
+        if(serverRows<1)P(false,"الشيت فاضي أو اسم الورقة ليس Offers.","The sheet is empty or the tab is not named Offers.");
+        else P(true,"عدد الباقات في الشيت: "+serverRows,"Packages in the sheet: "+serverRows);}
+      const fromApi=DATA_INFO.src==="api";
+      if(fromApi)P(true,"هذا الجهاز يعرض بيانات الشيت.","This device is showing the sheet data.");
+      else P(false,"هذا الجهاز يعرض بيانات الملف المحلي وليس الشيت"+(API_STATE.err?" ("+API_STATE.err+")":"")+". اضغط تحديث الأسعار.","This device is showing the local file data, not the sheet"+(API_STATE.err?" ("+API_STATE.err+")":"")+". Tap Refresh prices.");
+      if(fromApi&&serverVer&&String(DATA_INFO.ver)!==serverVer)P(null,"يوجد تحديث جديد في الشيت لم يُطبّق على هذا الجهاز. اضغط تحديث الأسعار.","The sheet has newer data than this device. Tap Refresh prices.");
+      if(pendingLocal())P(null,"يوجد "+pendingLocal()+" تعديل/إضافة محفوظة على هذا الجهاز فقط ولم تصل للشيت (غالبًا تمت قبل ربط السكريبت). اضغط رفع التعديلات المحلية.",pendingLocal()+" change(s) exist only on this device (probably made before the script was connected). Tap Upload local changes.");
+      finish();});
+  });
+}
+function localRowObj(arr,co,cat){
+  return {id:arr[0],company:co,category:cat,name:arr[1],calls:arr[2],data:arr[3],social:arr[4],official:arr[5],price:arr[6],validity:arr[7],apps:arr[8],countries:(arr[9]||[]).join(";"),cost:(L.costs[arr[0]]!==undefined?L.costs[arr[0]]:(arr[10]===""||arr[10]==null?"":arr[10]))};
+}
+function pushLocal(){
+  const jobs=[];
+  L.adds.forEach(function(a){jobs.push({kind:"add",key:a,row:localRowObj(a.row,a.co,a.cat)});});
+  Object.keys(L.edits).forEach(function(id){const it=getById(id);jobs.push({kind:"edit",id:id,row:localRowObj(L.edits[id],it?it.cid:"",it?it.cat:"")});});
+  if(!jobs.length)return;
+  toast(t("ex_prep"));
+  let i=0,fail="";
+  const next=function(){
+    if(i>=jobs.length){
+      if(fail){toast(t("save_err")+": "+fail);return;}
+      L.adds=[];L.edits={};saveL();loadData(true);route();toast(t("saved"));return;}
+    const jb=jobs[i++];
+    apiPost({action:jb.kind,pin:ADMIN.edit,user:S.name||"?",row:jb.row,detail:"uploaded from device"},function(e,j){
+      if(e||!j){fail=t("pin_net");i=jobs.length;}
+      else if(!j.ok){fail=String(j.error);if(j.error==="pin")ADMIN.edit="";i=jobs.length;}
+      next();});
+  };
+  next();
 }
 
 /* ---------- report model ---------- */
@@ -968,6 +1042,19 @@ function applyUpdate(){
   Promise.all(tasks).then(go2,go2);
 }
 
+/* ---------- stop double-tap / pinch zoom (iOS) ---------- */
+let LASTTOUCH=0;
+document.addEventListener("touchend",function(e){
+  const n=Date.now(),tg=e.target;
+  if(n-LASTTOUCH<350&&!(tg.closest&&tg.closest("input,textarea,select,label"))){
+    e.preventDefault();
+    const el=tg.closest&&tg.closest("[data-act]");if(el)el.click();
+  }
+  LASTTOUCH=n;
+},false);
+document.addEventListener("gesturestart",function(e){e.preventDefault();},false);
+document.addEventListener("dblclick",function(e){e.preventDefault();},false);
+
 /* ---------- events ---------- */
 let VTAPS=0,VT=0;
 document.addEventListener("click",function(e){
@@ -1005,6 +1092,9 @@ document.addEventListener("click",function(e){
   else if(a==="adminExit"){leaveAdmin();route();}
   else if(a==="ver"){const n=Date.now();if(n-VT>3000)VTAPS=0;VT=n;VTAPS++;if(VTAPS>=5){VTAPS=0;if(!ADMIN.on)enterAdmin();}}
   else if(a==="diag")diagnose();
+  else if(a==="chklink")checkLink();
+  else if(a==="chkrefresh"){closeModal();loadData(true);}
+  else if(a==="pushlocal"){closeModal();needEdit(pushLocal);}
   else if(a==="nmcancel"){closeModal();leaveAdmin();route();}
   else if(a==="addpkg")needEdit(function(){openForm(null);});
   else if(a==="edit"){const o=getById(el.dataset.k);if(o)needEdit(function(){openForm(o);});}
