@@ -1191,7 +1191,16 @@ document.addEventListener("input",function(e){
   const id=e.target.id;
   if(id==="sq"){VS.sq=e.target.value;$("#slist").innerHTML=searchList();}
   if(id==="smax"){VS.smax=e.target.value;$("#slist").innerHTML=searchList();}
-  if(id==="hpv"){VS.hv=e.target.value;$("#hbody").innerHTML=homeBody();}
+  if(id==="hpv"){
+    const v=e.target.value;
+    if(ADMIN.on&&/^\d{4}$/.test(v)&&v===ADMIN.pin){VS.hv="";e.target.value="";leaveAdmin();route();return;}
+    VS.hv=v;$("#hbody").innerHTML=homeBody();
+    if(!ADMIN.on&&/^\d{4}$/.test(v)&&(CFG.apiUrl||CFG.adminPin)){
+      adminLogin(v,function(err){
+        if(err)return;                                   /* not the code: it was just a 4-digit price */
+        VS.hv="";const i=$("#hpv");if(i)i.value="";route();askName();});
+    }
+  }
   if(id==="pv"){VS.pv=e.target.value;$("#pres").innerHTML=priceResults();}
 });
 
