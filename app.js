@@ -262,7 +262,13 @@ function stripCost(obj){
     return Object.assign({},c,{cats:cats});})};
 }
 let DATA_INFO={src:"",updated:"",ver:""};
-function setData(obj,info){BASE=obj;DATA_INFO=info||{src:"json",updated:obj.updated||"",ver:String(obj.rev||obj.updated||"0")};rebuild();}
+function pinHash(p){let h1=0x811c9dc5,h2=5381;const s="tlc|"+p;for(let i=0;i<s.length;i++){const c=s.charCodeAt(i);h1^=c;h1=Math.imul(h1,16777619)>>>0;h2=((h2*33)^c)>>>0;}return h1.toString(36)+h2.toString(36);}
+function stashCosts(obj){
+  let n=0;obj.companies.forEach(function(c){Object.keys(c.cats).forEach(function(k){c.cats[k].forEach(function(r){
+    if(r[10]!==undefined&&r[10]!==""&&r[10]!==null){L.costs[r[0]]=+r[10];n++;}});});});
+  if(n)saveL();
+}
+function setData(obj,info){if(ADMIN.on&&info&&info.src==="api")stashCosts(obj);BASE=obj;DATA_INFO=info||{src:"json",updated:obj.updated||"",ver:String(obj.rev||obj.updated||"0")};rebuild();}
 
 /* ---------- network ---------- */
 function xhr(url,cb){
@@ -617,11 +623,23 @@ function adminLogin(pin,cb){
   if(CFG.apiUrl){
     apiGet({action:"offers",pin:pin},function(e,j){
       if(e||!j)return cb("net");if(!j.ok)return cb("pin");
-      ADMIN.on=true;ADMIN.pin=pin;
+      ADMIN.on=true;ADMIN.pin=pin;S.ph=pinHash(pin);save();
       const o=composeFromApi(BASE,j);if(o)setData(o,{src:"api",updated:String(j.version||"").slice(0,10),ver:String(j.version)});else rebuild();
       cb(null);});
   }else{
-    if(CFG.adminPin&&pin===String(CFG.adminPin)){ADMIN.on=true;ADMIN.pin=pin;rebuild();cb(null);}else cb("pin");
+    if(CFG.adminPin&&pin===String(CFG.adminPin)){ADMIN.on=true;ADMIN.pin=pin;S.ph=pinHash(pin);save();rebuild();cb(null);}else cb("pin");
+  }
+}
+/* instant entry on a device that already logged in once (the server re-checks in the background) */
+function fastAdmin(v){
+  ADMIN.on=true;ADMIN.pin=v;rebuild();VS.hv="";const i=$("#hpv");if(i)i.value="";route();askName();
+  if(CFG.apiUrl){
+    apiGet({action:"offers",pin:v},function(e,j){
+      if(e||!j)return;                                   /* offline: stay in admin mode */
+      if(!j.ok){if(j.error==="pin"){S.ph="";save();if(ADMIN.on&&ADMIN.pin===v){leaveAdmin();closeModal();route();toast(t("pin_bad"));}}return;}
+      if(!(ADMIN.on&&ADMIN.pin===v))return;
+      const o=composeFromApi(BASE,j);
+      if(o)silentApply(o,{src:"api",updated:String(j.version||"").slice(0,10),ver:String(j.version)});});
   }
 }
 function leaveAdmin(){ADMIN.on=false;ADMIN.pin="";ADMIN.edit="";rebuild();}
@@ -1195,6 +1213,7 @@ document.addEventListener("input",function(e){
     const v=e.target.value;
     if(ADMIN.on&&/^\d{4}$/.test(v)&&v===ADMIN.pin){VS.hv="";e.target.value="";leaveAdmin();route();return;}
     VS.hv=v;$("#hbody").innerHTML=homeBody();
+    if(!ADMIN.on&&/^\d{4}$/.test(v)&&S.ph&&pinHash(v)===S.ph){fastAdmin(v);return;}
     if(!ADMIN.on&&/^\d{4}$/.test(v)&&(CFG.apiUrl||CFG.adminPin)){
       adminLogin(v,function(err){
         if(err)return;                                   /* not the code: it was just a 4-digit price */
